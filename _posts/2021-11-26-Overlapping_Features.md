@@ -68,7 +68,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
 <!-- Return Query Script -->
   <script>
       document.getElementById('searchButton').onclick = function () {
-          
+          d3.select("svg").remove();
           var dis1 = document.getElementById("disease1").value
           var dis2 = document.getElementById("disease2").value
           var comp = document.getElementById("comparison").value
