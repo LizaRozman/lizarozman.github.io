@@ -11,7 +11,7 @@ function vennDiagram(disComp) {
       // create venn diagram
       var chart = anychart.venn(data);
       
-      margin = ({top : 100, bottom: 300});
+      chart.margin = ({top : 100, bottom: 300});
 
       // set chart title
       chart
