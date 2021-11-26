@@ -73,7 +73,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
           var dis2 = document.getElementById("disease2").value
           var comp = document.getElementById("comparison").value
 
-          var myChart = vennDiagram(dis1, dis2, comp);
+          var myChart = new vennDiagram(dis1, dis2, comp);
       }
   </script>
 </body>
