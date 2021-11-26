@@ -165,7 +165,7 @@ async function vennDiagram(dis1, dis2, comp) {
         .enabled(true)
         .fontFamily('Roboto, sans-serif')
         .fontSize(24)
-        .padding({ bottom: 5 })
+        .padding({ bottom: 30 })
         .text('Overlap in ' + compName + ' between ' + dis1name + ' and ' + dis2name + ':');
     // set chart stroke
     chart.stroke('1 #fff');
