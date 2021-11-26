@@ -27,13 +27,12 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
         width: 100%;
         height: 75%;
         margin: 5;
-        padding-bottom: 100px;
+        padding-bottom: 100px !important;
       }
       #footer
       {
-        position: relative;
-        padding-top: 100px;
-        bottom: 0;   
+        padding-top: 100px !important;
+        bottom: 0 !important;   
       }
     </style>
 </head>
