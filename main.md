@@ -26,7 +26,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
       {
         width: 100%;
         height: 75%;
-        padding-bottom: 100px !important;
+        padding-bottom: 150px !important;
       }
       #footer
       {
