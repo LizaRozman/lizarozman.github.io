@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Overlapping features of neurological diseases
 cover-img: /assets/img/brain_wallpaper_dark.jpg
 ---
