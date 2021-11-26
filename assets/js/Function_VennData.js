@@ -158,6 +158,7 @@ async function vennDiagram(dis1, dis2, comp) {
     // create venn diagram
     var chart = anychart.venn(data);
 
+    chart.margin =({top: 100, bottom: 400});
     // set chart title
     chart
         .title()
