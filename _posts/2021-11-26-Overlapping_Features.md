@@ -64,7 +64,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
     </form>
     <button id="searchButton" type="button" name="button">Search</button>
   </div>
-  <div id="container"> {height: 150%}</div>
+  <div style="height: 400px" id="container"></div>
  
 <!-- Return Query Script -->
   <script>
