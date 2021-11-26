@@ -25,8 +25,8 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
       #container
       {
         width: 100%;
-        height: 100%;
-        margin: 0;
+        height: 150%;
+        margin: 5;
         padding: 0;
       }
     </style>
