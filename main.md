@@ -31,6 +31,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
       }
       #footer
       {
+        position: relative;
         padding-top: 100px;
         bottom: 0;   
       }
