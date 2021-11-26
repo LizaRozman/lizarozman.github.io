@@ -64,7 +64,8 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
     </form>
     <button id="searchButton" type="button" name="button">Search</button>
   </div>
-<div id="container"></div>
+  <div id="container"> {height: 150%}</div>
+ 
 <!-- Return Query Script -->
   <script>
       document.getElementById('searchButton').onclick = function () {
