@@ -14,12 +14,8 @@ author: Sonia Bălan, Liza Rozman, Inga Schöyen, Szabolcs Meszaros
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Us: "aboutus"
-  #Resources:
-   # - Beautiful Jekyll: "https://beautifuljekyll.com"
-   #- Learn markdown: "https://www.markdowntutorial.com/"
-  #Author's home: "https://deanattali.com"
   Overlap: "main"
+  About Us: "aboutus"
   #Resources:
    # - Beautiful Jekyll: "https://beautifuljekyll.com"
    #- Learn markdown: "https://www.markdowntutorial.com/"
