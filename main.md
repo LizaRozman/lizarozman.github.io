@@ -32,7 +32,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
       #footer
       {
         bottom: 0;
-        position: relative;
+        display: block;
       }
     </style>
 </head>
