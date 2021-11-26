@@ -158,14 +158,14 @@ async function vennDiagram(dis1, dis2, comp) {
     // create venn diagram
     var chart = anychart.venn(data);
 
-    chart.margin =({top: 100, bottom: 400});
+
     // set chart title
     chart
         .title()
         .enabled(true)
         .fontFamily('Roboto, sans-serif')
         .fontSize(24)
-        .padding({ bottom: 30 })
+        .padding({ bottom: 10 })
         .text('Overlap in ' + compName + ' between ' + dis1name + ' and ' + dis2name + ':');
     // set chart stroke
     chart.stroke('1 #fff');
