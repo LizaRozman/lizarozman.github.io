@@ -30,8 +30,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
       }
       #footer
       {
-        padding-top: 100px !important;
-        bottom: 0 !important;   
+        padding-top: 100px !important;   
       }
     </style>
 </head>
