@@ -18,11 +18,11 @@ function vennDiagram(disComp) {
       var fontsizeLabel = 0, fontsizeTitle = 0;
       if(dataA.value.length>=dataB.value.length){
             fontsizeLabel = parseInt(16*(1/dataA.value.length));
-            fontsizeTitle = parseInt(30*(1/dataA.value.length));
+            fontsizeTitle = parseInt(40*(1/dataA.value.length));
       }
       else{
             fontsizeLabel = parseInt(16*(1/dataB.value.length));
-            fontsizeTitle = parseInt(30*(1/dataB.value.length));
+            fontsizeTitle = parseInt(40*(1/dataB.value.length));
           }
 
       // set chart title
@@ -30,7 +30,7 @@ function vennDiagram(disComp) {
         .title()
         .enabled(true)
         .fontFamily('Roboto, sans-serif')
-        .fontSize(24)
+        .fontSize(fontsizeTitle)
         .padding({ bottom: 30 })
         .text('Overlap in brain region expression');
 
@@ -40,7 +40,7 @@ function vennDiagram(disComp) {
       // set labels settings
       chart
         .labels()
-        .fontSize(16)
+        .fontSize(fontsizeLabel)
         .fontColor('#5e6469')
         .hAlign("center")
         .vAlign("center")
