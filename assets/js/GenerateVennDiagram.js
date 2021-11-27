@@ -11,6 +11,19 @@ function vennDiagram(disComp) {
       // create venn diagram
       var chart = anychart.venn(data);
       
+      // function that generates font size based on Array size
+      var dataA = data[0];
+      console.log(dataA);
+      var dataB = data[1];
+      var fontsizeLabel = 0, fontsizeTitle = 0;
+      if(dataA.value.length>=dataB.value.length){
+            fontsizeLabel = parseInt(16*(1/dataA.value.length));
+            fontsizeTitle = parseInt(30*(1/dataA.value.length));
+      }
+      else{
+            fontsizeLabel = parseInt(16*(1/dataB.value.length));
+            fontsizeTitle = parseInt(30*(1/dataB.value.length));
+          }
 
       // set chart title
       chart
