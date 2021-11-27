@@ -11,7 +11,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
   <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
   <!-- Initialize a global wdk object using the WBK object -->
   <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
-  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
   <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-venn.min.js"></script>
   <script src="https://cdn.anychart.com/releases/8.9.0/themes/pastel.min.js"></script>
