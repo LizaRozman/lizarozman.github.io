@@ -1,6 +1,9 @@
-//Purpose of function: The functions retreives data, computes and assigns Venn-diagram specifications (size, text),
-//creates the specified Venn-diagrams in the indicated container
-//Inputs: 'dis1' and 'dis2' are the diseases to selected by the user for comparison, 'comp' is the comparison condition selected by the user 
+//Purpose: Function_VennData.js includes 2 functions to retreive data, compute and assign Venn-diagram specifications (size, text),
+//and create the specified Venn-diagrams in the indicated container.
+//Inputs: 'dis1' and 'dis2' are the diseases to selected by the user for comparison, 'comp' is the comparison condition selected by the user
+//Additionally both functions use the 
+
+//calls the correct queries to retreive data, computes Venn-digram compartment sizes and returns json object with digram specifications 
 async function getData(dis1, dis2, comp) {
 
     //output arrays for Venn diagram
@@ -77,19 +80,12 @@ for(var j in AB){
   contDiagAB += '\n';
     }
     
-// assigns name of disease to object from name hashmap
-// hardcoded for the moment    
-//let names = new Map();
-//names.set("Q181923", "ADHD");
-//names.set("Q4340209", "Mental Depression");
-//names.set("Q131755", "Bipolar Disorder");
-//names.set("Q202387", "PTSD");
+//get disease names from 'names' map    
+//let dis1name = names.get(dis1);
+//let dis2name = names.get(dis2);
 
-let dis1name = names.get(dis1);
-let dis2name = names.get(dis2);
-
-// returns the json objects thats passed to the anychart.venn function
-return [
+// returns the json objects specifying the Venn-diagrams that is passed to the anychart.venn function for drawing
+/*return [
         {
           x: 'A',
           value: A_size,
@@ -123,16 +119,41 @@ return [
         }
       ];
 }
+*/
 
-async function vennDiagram(dis1, dis2, comp) {
-    
-
-    // had to redefine all the variables in this method, bc setting it as global variable didnt work btw html and js
-   // let names = new Map();
-    //names.set("Q181923", "ADHD");
-    //names.set("Q4340209", "Mental Depression");
-    //names.set("Q131755", "Bipolar Disorder");
-    //names.set("Q202387", "PTSD");
+   // gets data from getData function
+    // might need to add path or smth 
+    var data = {
+                x: 'A',
+                value: A_size,
+                name: contDiagA,
+                tooltipTitle: dis1name,
+                normal: {fill: "#8ecafb 0.7"},
+                hovered: {fill: "#8ecafb 1"},
+                selected: {fill: "#8ecafb 1.3"}
+                },
+                {
+                x: 'B',
+                value: B_size,
+                name: contDiagB,
+                tooltipTitle: dis2name,
+                normal: {fill: "#ffeaa6 0.7"},
+                hovered: {fill: "#ffeaa6 1"},
+                selected: {fill: "#ffeaa6 1.3"}
+                },
+                {
+                x: ['A', 'B'],
+                value: AB_size,
+                name: contDiagAB,
+                tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
+                normal: {fill: "#9fdebe 0.8"},
+                hovered: {fill: "#9fdebe 1"},
+                selected: {fill: "#9fdebe 1.3"},
+                hatchFill: {
+                    type:"weave",
+                    color: "#83c3a3"
+                    }    
+                }
 
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
@@ -150,9 +171,7 @@ async function vennDiagram(dis1, dis2, comp) {
     // set chart theme
     anychart.theme('pastel');
 
-    // gets data from getData function
-    // might need to add path or smth 
-    var data = await getData(dis1, dis2, comp);
+ 
 
     // create venn diagram
     var chart = anychart.venn(data);
