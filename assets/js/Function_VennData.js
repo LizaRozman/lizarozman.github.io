@@ -4,7 +4,7 @@
 //Additionally both functions use the 
 
 //calls the correct queries to retreive data, computes Venn-digram compartment sizes and returns json object with digram specifications 
-async function getData(dis1, dis2, comp, names) {
+async function VennData(dis1, dis2, comp, names) {
 
     //output arrays for Venn diagram
     var AB = new Array(), A = new Array(), B = new Array(); //array for storing and counting items retreived by queries.js 
