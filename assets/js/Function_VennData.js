@@ -1,17 +1,16 @@
-//purpose of function: retrieve data of querys, check for overlap a. assign to json objects for venn diagram
-//should be integrated after query is run by clicking search button and before venn diagram production
-// disComp = name of query function for specific component
-
+//Purpose of function: The functions retreives data, computes and assigns Venn-diagram specifications (size, text),
+//creates the specified Venn-diagrams in the indicated container
+//Inputs: 'dis1' and 'dis2' are the diseases to selected by the user for comparison, 'comp' is the comparison condition selected by the user 
 async function getData(dis1, dis2, comp) {
 
     //output arrays for Venn diagram
-    var AB = new Array(), A = new Array(), B = new Array();
-    var contDiagA = "", contDiagB = "", contDiagAB = "";
+    var AB = new Array(), A = new Array(), B = new Array(); //array for storing and counting items retreived by queries.js 
+    var contDiagA = "", contDiagB = "", contDiagAB = ""; //strings used as output for the items retreived by queries.js
 
-    // dis1 a. dis2 are dummy variables, to be filled in once function to retrieve specific properties of query is done
-    // likely need module to retrieve needed data from query return json object
 
-    // calls retrieve function from query file, need to adjust to final names
+
+    // calls retrieve function from query.js file based on user inputs. Specific query called is based on comparison condition,
+    //results1 and reuslts2 will hold data for dis1 and dis2 respectively
     if (comp == "treat") {
         compName = "treatments";
         var results1 = await TreatQuery(dis1);
@@ -31,32 +30,38 @@ async function getData(dis1, dis2, comp) {
     } else { alert('selected condition cannot be found') }
 
 
-    // loops through data and checks if elements are identical, if true adds to AB array, if not adds to A/B respectively
-    // also checks if any component is doubled in the query
-    for (let i in results1) {
-
+    
+    
+    // loops through data in both reults1 and results2 and checks if item are identical, if true adds to AB array
+    for (let i in results1) { 
         for (let j in results2) {
-
             if (results1[i] == results2[j]) {
                 AB.push(results2[j]);
             }
         }
     }
+    
+    // loops through results 1. If element is not already in AB or A, assigns item to A 
     for (var i in results1) {
         if (!(AB.includes(results1[i])) && !(A.includes(results1[i]))) {
             A.push(results1[i]);
         }
     }
 
+    // loops through results 2. If element is not already in AB or B, assigns item to B 
     for (var j in results2) {
         if (!(AB.includes(results2[j])) && !(B.includes(results2[j]))) {
             B.push(results2[j]);
         }
     }
 
-
-// construct string of items in arrays
-
+// computes relative size of the diagram parts (A, B, AB). 
+var AB_total = A.length + B.length + AB.length;
+var A_size = parseInt(A.length/AB_total*100);
+var B_size = parseInt(B.length/AB_total*100);
+var AB_size = parseInt(AB.length/AB_total*100);
+    
+// construct string of items in A, B and AB arrays for output. Items in the strings are sperarated by newline 
 for(let n in A){
   contDiagA += A[(n)]; 
   contDiagA += '\n';
@@ -71,20 +76,14 @@ for(var j in AB){
   contDiagAB += AB[j]; 
   contDiagAB += '\n';
     }
-
-// computes relative size of the diagram parts
-var AB_total = A.length + B.length + AB.length;
-var A_size = parseInt(A.length/AB_total*100);
-var B_size = parseInt(B.length/AB_total*100);
-var AB_size = parseInt(AB.length/AB_total*100);
-
+    
 // assigns name of disease to object from name hashmap
-// hardcoded for the moment
-let names = new Map();
-names.set("Q181923", "ADHD");
-names.set("Q4340209", "Mental Depression");
-names.set("Q131755", "Bipolar Disorder");
-names.set("Q202387", "PTSD");
+// hardcoded for the moment    
+//let names = new Map();
+//names.set("Q181923", "ADHD");
+//names.set("Q4340209", "Mental Depression");
+//names.set("Q131755", "Bipolar Disorder");
+//names.set("Q202387", "PTSD");
 
 let dis1name = names.get(dis1);
 let dis2name = names.get(dis2);
@@ -129,11 +128,11 @@ async function vennDiagram(dis1, dis2, comp) {
     
 
     // had to redefine all the variables in this method, bc setting it as global variable didnt work btw html and js
-    let names = new Map();
-    names.set("Q181923", "ADHD");
-    names.set("Q4340209", "Mental Depression");
-    names.set("Q131755", "Bipolar Disorder");
-    names.set("Q202387", "PTSD");
+   // let names = new Map();
+    //names.set("Q181923", "ADHD");
+    //names.set("Q4340209", "Mental Depression");
+    //names.set("Q131755", "Bipolar Disorder");
+    //names.set("Q202387", "PTSD");
 
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
