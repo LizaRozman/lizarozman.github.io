@@ -33,17 +33,17 @@ async function VennData(dis1, dis2, comp, names) {
     } else { alert('selected condition cannot be found') }
 
 
-    
-    
+
+
     // loops through data in both reults1 and results2 and checks if item are identical, if true adds to AB array
-    for (let i in results1) { 
+    for (let i in results1) {
         for (let j in results2) {
             if (results1[i] == results2[j]) {
                 AB.push(results2[j]);
             }
         }
     }
-    
+
     // loops through results 1. If element is not already in AB or A, assigns item to A 
     for (var i in results1) {
         if (!(AB.includes(results1[i])) && !(A.includes(results1[i]))) {
@@ -58,106 +58,109 @@ async function VennData(dis1, dis2, comp, names) {
         }
     }
 
-// computes relative size of the diagram parts (A, B, AB). 
-var AB_total = A.length + B.length + AB.length;
-var A_size = parseInt(A.length/AB_total*100);
-var B_size = parseInt(B.length/AB_total*100);
-var AB_size = parseInt(AB.length/AB_total*100);
-    
-// construct string of items in A, B and AB arrays for output. Items in the strings are sperarated by newline 
-for(let n in A){
-  contDiagA += A[(n)]; 
-  contDiagA += '\n';
-} 
+    // computes relative size of the diagram parts (A, B, AB). 
+    var AB_total = A.length + B.length + AB.length;
+    var A_size = parseInt(A.length / AB_total * 100);
+    var B_size = parseInt(B.length / AB_total * 100);
+    var AB_size = parseInt(AB.length / AB_total * 100);
 
-for(var m in B){
-  contDiagB += B[m]; 
-  contDiagB += '\n';
-} 
-
-for(var j in AB){
-  contDiagAB += AB[j]; 
-  contDiagAB += '\n';
+    // construct string of items in A, B and AB arrays for output. Items in the strings are sperarated by newline 
+    for (let n in A) {
+        contDiagA += A[(n)];
+        contDiagA += '\n';
     }
-    
-//get disease names from 'names' map    
-//let dis1name = names.get(dis1);
-//let dis2name = names.get(dis2);
 
-// returns the json objects specifying the Venn-diagrams that is passed to the anychart.venn function for drawing
-/*return [
-        {
-          x: 'A',
-          value: A_size,
-          name: contDiagA,
-          tooltipTitle: dis1name,
-          normal: {fill: "#8ecafb 0.7"},
-          hovered: {fill: "#8ecafb 1"},
-          selected: {fill: "#8ecafb 1.3"}
-        },
-        {
-          x: 'B',
-          value: B_size,
-          name: contDiagB,
-            tooltipTitle: dis2name,
-          normal: {fill: "#ffeaa6 0.7"},
-          hovered: {fill: "#ffeaa6 1"},
-          selected: {fill: "#ffeaa6 1.3"}
-        },
-        {
-          x: ['A', 'B'],
-          value: AB_size,
-          name: contDiagAB,
-          tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
-          normal: {fill: "#9fdebe 0.8"},
-          hovered: {fill: "#9fdebe 1"},
-          selected: {fill: "#9fdebe 1.3"},
-          hatchFill: {
-            type:"weave",
-            color: "#83c3a3"
-          }    
-        }
-      ];
-}
-*/
+    for (var m in B) {
+        contDiagB += B[m];
+        contDiagB += '\n';
+    }
 
-   // gets data from getData function
-    // might need to add path or smth 
-    var data = {
-                x: 'A',
-                value: A_size,
-                name: contDiagA,
-                tooltipTitle: dis1name,
-                normal: {fill: "#8ecafb 0.7"},
-                hovered: {fill: "#8ecafb 1"},
-                selected: {fill: "#8ecafb 1.3"}
-                },
-                {
-                x: 'B',
-                value: B_size,
-                name: contDiagB,
-                tooltipTitle: dis2name,
-                normal: {fill: "#ffeaa6 0.7"},
-                hovered: {fill: "#ffeaa6 1"},
-                selected: {fill: "#ffeaa6 1.3"}
-                },
-                {
-                x: ['A', 'B'],
-                value: AB_size,
-                name: contDiagAB,
-                tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
-                normal: {fill: "#9fdebe 0.8"},
-                hovered: {fill: "#9fdebe 1"},
-                selected: {fill: "#9fdebe 1.3"},
-                hatchFill: {
-                    type:"weave",
-                    color: "#83c3a3"
-                    }    
-                }
+    for (var j in AB) {
+        contDiagAB += AB[j];
+        contDiagAB += '\n';
+    }
 
+    //get disease names from 'names' map    
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
 
+    // returns the json objects specifying the Venn-diagrams that is passed to the anychart.venn function for drawing
+    /*return [
+            {
+              x: 'A',
+              value: A_size,
+              name: contDiagA,
+              tooltipTitle: dis1name,
+              normal: {fill: "#8ecafb 0.7"},
+              hovered: {fill: "#8ecafb 1"},
+              selected: {fill: "#8ecafb 1.3"}
+            },
+            {
+              x: 'B',
+              value: B_size,
+              name: contDiagB,
+                tooltipTitle: dis2name,
+              normal: {fill: "#ffeaa6 0.7"},
+              hovered: {fill: "#ffeaa6 1"},
+              selected: {fill: "#ffeaa6 1.3"}
+            },
+            {
+              x: ['A', 'B'],
+              value: AB_size,
+              name: contDiagAB,
+              tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
+              normal: {fill: "#9fdebe 0.8"},
+              hovered: {fill: "#9fdebe 1"},
+              selected: {fill: "#9fdebe 1.3"},
+              hatchFill: {
+                type:"weave",
+                color: "#83c3a3"
+              }    
+            }
+          ];
+    }
+    */
+
+    // gets data from getData function
+    // might need to add path or smth 
+    var data = [
+        {
+            x: 'A',
+            value: A_size,
+            name: contDiagA,
+            tooltipTitle: dis1name,
+            normal: { fill: "#8ecafb 0.7" },
+            hovered: { fill: "#8ecafb 1" },
+            selected: { fill: "#8ecafb 1.3" }
+        },
+        {
+            x: 'B',
+            value: B_size,
+            name: contDiagB,
+            tooltipTitle: dis2name,
+            normal: { fill: "#ffeaa6 0.7"},
+            hovered: { fill: "#ffeaa6 1"},
+            selected: { fill: "#ffeaa6 1.3"}
+        },
+        {
+            x: ['A', 'B'],
+            value: AB_size,
+            name: contDiagAB,
+            tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
+            normal: { fill: "#9fdebe 0.8" },
+            hovered: { fill: "#9fdebe 1" },
+            selected: { fill: "#9fdebe 1.3" },
+            hatchFill: {
+            type: "weave",
+            color: "#83c3a3"
+            }
+        }
+    ]
+                
+
+    //let dis1name = names.get(dis1);
+    //let dis2name = names.get(dis2);
+/*
     if (comp == "treat") {
         compName = "treatments";
     } else if (comp == "symp") {
@@ -167,7 +170,7 @@ for(var j in AB){
     } else if (comp == "struct") {
         compName = "brain structures";
     } else { alert('selected condition cannot be found') }
-        
+*/        
     // set chart theme
     anychart.theme('pastel');
 
