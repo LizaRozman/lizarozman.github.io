@@ -1,7 +1,7 @@
-//Purpose: Function_VennData.js includes 2 functions to retreive data, compute and assign Venn-diagram specifications (size, text),
+//Purpose: VennData functions is ued to retreive data, compute and assign Venn-diagram specifications (size, text),
 //and create the specified Venn-diagrams in the indicated container.
-//Inputs: 'dis1' and 'dis2' are the diseases to selected by the user for comparison, 'comp' is the comparison condition selected by the user
-//Additionally both functions use the 
+//Inputs: 'dis1' and 'dis2' are the diseases selected by the user for comparison, 'comp' is the comparison condition selected by the user,
+//'names' is a map connecting diseasse names with their respective Q values
 
 //calls the correct queries to retreive data, computes Venn-digram compartment sizes and returns json object with digram specifications 
 async function VennData(dis1, dis2, comp, names) {
@@ -84,45 +84,8 @@ async function VennData(dis1, dis2, comp, names) {
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
 
-    // returns the json objects specifying the Venn-diagrams that is passed to the anychart.venn function for drawing
-    /*return [
-            {
-              x: 'A',
-              value: A_size,
-              name: contDiagA,
-              tooltipTitle: dis1name,
-              normal: {fill: "#8ecafb 0.7"},
-              hovered: {fill: "#8ecafb 1"},
-              selected: {fill: "#8ecafb 1.3"}
-            },
-            {
-              x: 'B',
-              value: B_size,
-              name: contDiagB,
-                tooltipTitle: dis2name,
-              normal: {fill: "#ffeaa6 0.7"},
-              hovered: {fill: "#ffeaa6 1"},
-              selected: {fill: "#ffeaa6 1.3"}
-            },
-            {
-              x: ['A', 'B'],
-              value: AB_size,
-              name: contDiagAB,
-              tooltipTitle: compName + ' associated with both ' + dis1name + ' and ' + dis2name,
-              normal: {fill: "#9fdebe 0.8"},
-              hovered: {fill: "#9fdebe 1"},
-              selected: {fill: "#9fdebe 1.3"},
-              hatchFill: {
-                type:"weave",
-                color: "#83c3a3"
-              }    
-            }
-          ];
-    }
-    */
 
-    // gets data from getData function
-    // might need to add path or smth 
+    //save Venn-diagram specifications as an array of 3 json objects (one object for each compartment)
     var data = [
         {
             x: 'A',
@@ -156,29 +119,12 @@ async function VennData(dis1, dis2, comp, names) {
             }
         }
     ]
-                
-
-    //let dis1name = names.get(dis1);
-    //let dis2name = names.get(dis2);
-/*
-    if (comp == "treat") {
-        compName = "treatments";
-    } else if (comp == "symp") {
-        compName = "symptoms";
-    } else if (comp == "gene") {
-        compName = "genes";
-    } else if (comp == "struct") {
-        compName = "brain structures";
-    } else { alert('selected condition cannot be found') }
-*/        
+                     
     // set chart theme
     anychart.theme('pastel');
 
- 
-
     // create venn diagram
     var chart = anychart.venn(data);
-
 
     // set chart title
     chart
