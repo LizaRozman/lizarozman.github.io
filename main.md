@@ -76,8 +76,15 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
           var dis1 = document.getElementById("disease1").value;
           var dis2 = document.getElementById("disease2").value;
           var comp = document.getElementById("comparison").value;
-
-          vennDiagram(dis1, dis2, comp);
+    
+    
+          const names = new Map();
+          names.set("Q181923", "ADHD");
+          names.set("Q4340209", "Mental Depression");
+          names.set("Q131755", "Bipolar Disorder");
+          names.set("Q202387", "PTSD");
+    
+          vennDiagram(dis1, dis2, comp, names);
       }
   </script>
 </body>
