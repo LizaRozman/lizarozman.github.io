@@ -84,7 +84,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
           names.set("Q131755", "Bipolar Disorder");
           names.set("Q202387", "PTSD");
     
-          vennDiagram(dis1, dis2, comp, names);
+          getData(dis1, dis2, comp, names);
       }
   </script>
 </body>
