@@ -79,12 +79,10 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
     
     
           const names = new Map();
-          names.set(document.getElementById("disease1").value,  document.getElementById("disease1").name);
-          names.set( document.getElementById("disease2").value,  document.getElementById("disease2").name);
-         // names.set("Q181923", "ADHD");
-          //names.set("Q4340209", "Mental Depression");
-          //names.set("Q131755", "Bipolar Disorder");
-          //names.set("Q202387", "PTSD");
+          names.set("Q181923", "ADHD");
+          names.set("Q4340209", "Mental Depression");
+          names.set("Q131755", "Bipolar Disorder");
+          names.set("Q202387", "PTSD");
     
           VennData(dis1, dis2, comp, names);
       }
