@@ -153,7 +153,7 @@ async function VennData(dis1, dis2, comp, names) {
         .intersections()
         .labels()
         .fontStyle('italic')
-        .fontColor('#fff')
+        .fontColor('#5e6469')
         .format('{%Name}');
 
     // disable legend
