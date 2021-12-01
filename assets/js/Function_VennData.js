@@ -36,27 +36,13 @@ async function VennData(dis1, dis2, comp, names) {
 
 
     // loops through data in both reults1 and results2 and checks if item are identical, if true adds to AB array
-    for (let i in results1) {
-        for (let j in results2) {
-            if (results1[i] == results2[j]) {
-                AB.push(results2[j]);
-            }
-        }
-    }
+    for (let i in results1) { for (let j in results2) { if (results1[i] == results2[j]) { AB.push(results2[j]); } } }
 
     // loops through results 1. If element is not already in AB or A, assigns item to A 
-    for (var i in results1) {
-        if (!(AB.includes(results1[i])) && !(A.includes(results1[i]))) {
-            A.push(results1[i]);
-        }
-    }
+    for (var i in results1) { if (!(AB.includes(results1[i])) && !(A.includes(results1[i]))) { A.push(results1[i]); } }
 
     // loops through results 2. If element is not already in AB or B, assigns item to B 
-    for (var j in results2) {
-        if (!(AB.includes(results2[j])) && !(B.includes(results2[j]))) {
-            B.push(results2[j]);
-        }
-    }
+    for (var j in results2) { if (!(AB.includes(results2[j])) && !(B.includes(results2[j]))) { B.push(results2[j]); } }
 
     // computes relative size of the diagram parts (A, B, AB). 
     var AB_total = A.length + B.length + AB.length;
