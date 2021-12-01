@@ -1,5 +1,5 @@
 //Purpose: VennData functions is ued to retreive data, compute and assign Venn-diagram specifications (size, text),
-//and create the specified Venn-diagrams in the indicated container.
+//and display the specified Venn-diagrams in the indicated container.
 //Inputs: 'dis1' and 'dis2' are the diseases selected by the user for comparison, 'comp' is the comparison condition selected by the user,
 //'names' is a map connecting diseasse names with their respective Q values
 
