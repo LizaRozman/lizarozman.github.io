@@ -3,6 +3,23 @@
 //comparison condition (treatments, symptoms, genes, structures). The 'Retreive' functions carries out a wikidata search based on the query string
 //it receives and reurns data in an 'array'. 
 
+/* 
+LEGEND 
+
+Qs (objects):
+Q12135 - mental disorder
+Q181923 - ADHD
+Q131755 - bipolar
+Q4340209 - mental depression
+Q202387 - PTSD
+
+Ps (relations):
+P279 : 'subclass of' (to get all mental disorders - 2 queries)
+P2176: 'drug/therapy for treatmen' (disorder - treatment)
+P2293: genetic association (disorder - gene)
+P780 : symptoms and signs (disorder - symptoms)
+P5572: expressed in (gene - anatomical structure)
+*/
 
 //query building function for Treatments
 //input: 'disease' stores Q-value of selected disease
