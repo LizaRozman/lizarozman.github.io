@@ -49,6 +49,10 @@ async function VennData(dis1, dis2, comp, names) {
     var A_size = parseInt(A.length / AB_total * 100);
     var B_size = parseInt(B.length / AB_total * 100);
     var AB_size = parseInt(AB.length / AB_total * 100);
+    
+    console.log(A);
+    console.log(AB);
+    console.log(B);
 
     // construct string of items in A, B and AB arrays for output. Items in the strings are sperarated by newline 
     for (let n in A) {
