@@ -73,8 +73,8 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
   <script>
       document.getElementById('searchButton').onclick = function () {
           if (dis1 == dis2) {
-              alert('Please select different diseases to compare');
-          }else{
+              alert('Please select different diseases to compare');}
+          else{
               var dis1 = document.getElementById("disease1").value, dis2 = document.getElementById("disease2").value; //QIDs of diseases selected by user
               var comp = document.getElementById("comparison").value;                                                 //selected comparison condition
               const names = new Map();                                                                                //save disease names in new map 
@@ -83,7 +83,7 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
               names.set("Q131755", "Bipolar Disorder"),
               names.set("Q202387", "PTSD");
             
-              document.getElementById("container").innerHTML = ""                                                     //empty container before generating figure
+              document.getElementById("container").innerHTML = "";                                                     //empty container before generating figure
               VennData(dis1, dis2, comp, names);                                                                      //create new figure
           }
     
