@@ -108,7 +108,7 @@ async function VennData(dis1, dis2, comp, names) {
             color: "#83c3a3"
             }
         }
-    ]
+    ];
                      
     // set chart theme
     anychart.theme('pastel');
@@ -116,7 +116,8 @@ async function VennData(dis1, dis2, comp, names) {
     // create venn diagram
     var chart = anychart.venn(data);
     
-    chart.selected().labels(true); chart.normal().labels(false); //chart only shows it's label when selected
+    chart.selected().labels(true);
+    chart.normal().labels(false); //chart only shows it's label when selected
     
     // set chart title
     chart
