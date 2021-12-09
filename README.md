@@ -4,9 +4,9 @@ The aim of this project was to explore and visualize how similar mental disorder
 
 To aid such research initiatives, we have created a website that eplores and visualizes potential overlaps between the symptoms, treatmetns, genetic associations and brain regions involved in different mental disorders. At the moment, were entirely relying on the quite limited data acquired from Wikidata to do so, however our code may be modified to use other sources as well. This would making the comparison more accurate, and also aaplicable to a larger range of mental disorders.
 
-How to use:
-1.Navigate to Welcome page of our project by clicking the link in the 'About' section on Github, or type "lizarozman.github.io" into your browser.
-2.Once on the webpage, you can navigate between the 'Main', 'Overlap' and 'About us' pages via the navigation bar on top.
+# How to use:
+1. Navigate to Welcome page of our project by clicking the link in the 'About' section on Github, or type "lizarozman.github.io" into your browser.
+2. Once on the webpage, you can navigate between the 'Main', 'Overlap' and 'About us' pages via the navigation bar on top.
 
 - The Main page contains a post about brain anatomy.
 1. Click 'Read more' to see two interactive images of the brain (one lateral, and one lateral sliced view).
