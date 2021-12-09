@@ -8,7 +8,7 @@ How to use:
 1.Navigate to Welcome page of our project by clicking the link in the 'About' section on Github, or type "lizarozman.github.io" into your browser.
 2.Once on the webpage, you can navigate between the 'Main', 'Overlap' and 'About us' pages via the navigation bar on top.
 
--The Main page contains a post about brain anatomy.
+- The Main page contains a post about brain anatomy.
 1. Click 'Read more' to see two interactive images of the brain (one lateral, and one lateral sliced view).
 2. By hovering your mouse over different parts of the brain, a tooltip will show you the name of the region you are hovering over.
 3. Click on a region you are interested in to go to the corresponding Wikipedia page with more information about the region.
