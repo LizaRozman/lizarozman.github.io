@@ -1,4 +1,4 @@
-** Welcome to the repository containing the project we worked on during the practical 'Programming in the Life Sciences' at Maastricht University! **
+**Welcome to the repository containing the project we worked on during the practical 'Programming in the Life Sciences' at Maastricht University!**
 
 The aim of this project was to explore and visualize how similar mental disorders are to each other. While it is necssary to divide mental disorders into different categories and sub-categories for diagnostic reasons, this approach presents mental disorders in a binary way, and fails to show the inherently continous nature of these disorders. In reality, a person can show a range of symptoms that can be associated with multiple disroders, while the disorders themselves can arise from multiple underlying biological mechanisms, which also can overlap between disorders. We believe that studying such disorders in an integrated way without the necessity of focusing on one disroder or another may help us better identify the connections between symptoms and biological mechanisms.
 
