@@ -72,20 +72,22 @@ cover-img: /assets/img/brain_wallpaper_dark.jpg
 <!-- Return Query Script -->
   <script>
       document.getElementById('searchButton').onclick = function () {
-          d3.select("svg").remove();
-          var dis1 = document.getElementById("disease1").value;
-          var dis2 = document.getElementById("disease2").value;
-          var comp = document.getElementById("comparison").value;
-          document.getElementById("container").innerHTML = "" // empty container before generating figure
+          if (dis1 == dis2) {
+              alert('Please select different diseases to compare');
+          }else{
+              var dis1 = document.getElementById("disease1").value, dis2 = document.getElementById("disease2").value; //QIDs of diseases selected by user
+              var comp = document.getElementById("comparison").value;                                                 //selected comparison condition
+              const names = new Map();                                                                                //save disease names in new map 
+              names.set("Q181923", "ADHD"), 
+              names.set("Q4340209", "Mental Depression"),
+              names.set("Q131755", "Bipolar Disorder"),
+              names.set("Q202387", "PTSD");
+            
+              document.getElementById("container").innerHTML = ""                                                     //empty container before generating figure
+              VennData(dis1, dis2, comp, names);                                                                      //create new figure
+          }
     
-    
-          const names = new Map();
-          names.set("Q181923", "ADHD");
-          names.set("Q4340209", "Mental Depression");
-          names.set("Q131755", "Bipolar Disorder");
-          names.set("Q202387", "PTSD");
-    
-          VennData(dis1, dis2, comp, names);
+          
       }
   </script>
 </body>
