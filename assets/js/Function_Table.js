@@ -97,7 +97,7 @@ async function TableData(dis1, dis2, comp, names) {
         // the end of the table row
         var cell = document.createElement("td");
         if(j in allData[i]){
-            var cellText = document.createTextNode(allData[][]);
+            var cellText = document.createTextNode(allData[i][j]);
         }
         else{
             var cellText = document.createTextNode(" ");
