@@ -82,6 +82,7 @@ async function TableData(dis1, dis2, comp, names) {
     rowhd.appendChild(hd3);
     tblhead.appendChild(rowhd);
     tbl.appendChild(tblhead);
+    console.log("head);
 
     // creating all cells
     for (var j = 0; j<longestArray; j++) {
@@ -105,6 +106,7 @@ async function TableData(dis1, dis2, comp, names) {
     
         // add the row to the end of the table body
         tblBody.appendChild(row);
+        console.log("body");
     }
     
     // put the <tbody> in the <table>
