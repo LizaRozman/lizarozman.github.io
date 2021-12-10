@@ -56,7 +56,7 @@ async function VennData(dis1, dis2, comp, names) {
 
     // construct string of items in A, B and AB arrays for output. Items in the strings are sperarated by newline 
     for (let n in A) {
-        contDiagA += A[(n)];
+        contDiagA += A[n];
         contDiagA += '\n';
     }
 
