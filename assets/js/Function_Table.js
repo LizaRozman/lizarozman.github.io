@@ -59,6 +59,8 @@ async function TableData(dis1, dis2, comp, names) {
     else{
         longestArray = AB_size;
     }
+    console.log(allData);
+    console.log(longestArray);
     // get the reference for the body
     var body = document.getElementsByTagName("table");
     
