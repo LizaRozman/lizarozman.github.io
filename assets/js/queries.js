@@ -12,6 +12,8 @@ Q181923 - ADHD
 Q131755 - bipolar
 Q4340209 - mental depression
 Q202387 - PTSD
+Q1620186 - brain region
+Q1073 - brain
 
 Ps (relations):
 P279 : 'subclass of' (to get all mental disorders - 2 queries)
@@ -19,6 +21,7 @@ P2176: 'drug/therapy for treatmen' (disorder - treatment)
 P2293: genetic association (disorder - gene)
 P780 : symptoms and signs (disorder - symptoms)
 P5572: expressed in (gene - anatomical structure)
+P31: instance of
 */
 
 //query building function for Treatments
@@ -82,7 +85,7 @@ async function StructQuery(disease) {
                         wd:` + disease + ` wdt:P2293 ?gene. 
                         ?gene wdt:P5572 ?item.
                         VALUES (?regions) {(wd:Q1620186) (wd:Q1073)}.
-                        ?item wdt:P31|wdt:P2791 ?regions. 
+                        ?item wdt:P31|wdt:P279 ?regions. 
                         SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
                         } 
                         GROUP BY ?itemLabel 
