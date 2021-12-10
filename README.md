@@ -18,3 +18,16 @@ To aid such research initiatives, we have created a website that eplores and vis
  2. Select the two different(!) mental disorders that you want to compare via the first two drop-down menus.
  3. Then, select which characteristic of the diseases you want to compare via the third drop-down menu.   
  4. Finaly, click 'Search' to see a Venn-diagram showing the characteristics of interest for both dsiorders, as well as the overlap between them (if there is any).
+
+## Our files.
+Because this template was forked from another user, there are a couple files which are not our own that we are keeping in the repository as they encode for the layout of the template. The following files are the main ones that we either wrote or adapted for our website:
+ 1. main.html: the main code of our script is written
+ 2. index.html: the layout of our first page (came with the template)
+ 3. aboutus.md: code for the "About us" page
+ 4. config.yml: for settings that affect your entire website (came witht he tamplate)
+ 5. AUTHORS.md: contain information about the authors of the page
+ 6. assets --> js --> Function_VennData.js: contains the function for the Venn diagrams
+ 7. assets --> js --> queries.js: contains functions that assemble Wikidata queries
+ 8. assets --> img: contains all of the images used for the website
+ 9. posts --> 2021-11-19-brain-anatomy.html: contains the code for the blog post about brain anatomy and function
+
