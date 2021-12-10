@@ -82,7 +82,7 @@ async function TableData(dis1, dis2, comp, names) {
     rowhd.appendChild(hd3);
     tblhead.appendChild(rowhd);
     tbl.appendChild(tblhead);
-    console.log("head);
+    console.log("head");
 
     // creating all cells
     for (var j = 0; j<longestArray; j++) {
