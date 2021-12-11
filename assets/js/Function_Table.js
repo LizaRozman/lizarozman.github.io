@@ -62,7 +62,7 @@ async function TableData(dis1, dis2, comp, names) {
     console.log(allData);
     console.log(longestArray);
     // get the reference for the body
-    var body = document.getElementsByTagName("table");
+    var body = document.getElementsById("table");
     
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
