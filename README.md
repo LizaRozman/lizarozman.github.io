@@ -26,8 +26,11 @@ Because this template was forked from another user, there are a couple files whi
  3. aboutus.md: code for the "About us" page
  4. config.yml: for settings that affect your entire website (came witht he tamplate)
  5. AUTHORS.md: contain information about the authors of the page
- 6. assets --> js --> Function_VennData.js: contains the function for the Venn diagrams
- 7. assets --> js --> queries.js: contains functions that assemble Wikidata queries
- 8. assets --> img: contains all of the images used for the website
- 9. posts --> 2021-11-19-brain-anatomy.html: contains the code for the blog post about brain anatomy and function
+
+## Other commeents.
+We aould like to point out that there was no data on brain structures in Wikidata therefore the output for a combination of diseases with Mental Depression will only give the output of the other one. We would also like to point out that two of the output treatments for Mental Depression are "Jeff Bezos" and "Pee Pee Island" because they are also in Wikidata.
+ 7. assets --> js --> Function_VennData.js: contains the function for the Venn diagrams
+ 8. assets --> js --> queries.js: contains functions that assemble Wikidata queries
+ 9. assets --> img: contains all of the images used for the website
+ 10. posts --> 2021-11-19-brain-anatomy.html: contains the code for the blog post about brain anatomy and function
 
