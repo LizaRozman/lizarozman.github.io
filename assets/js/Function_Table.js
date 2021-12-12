@@ -116,4 +116,5 @@ async function TableData(dis1, dis2, comp, names) {
     // appends <table> into <body>
     body.appendChild(tbl);
     
+    document.body.appendChild(body);
 }
