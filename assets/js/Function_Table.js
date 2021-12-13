@@ -60,7 +60,7 @@ async function GenTable(dis1, dis2, comp, names) {
     console.log(allData);
     console.log(longestArray);
     // get the reference for the body
-    var body = document.getElementsById("table");
+    var body = document.getElementById("table");
     
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
