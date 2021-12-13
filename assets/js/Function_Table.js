@@ -1,4 +1,7 @@
-async function TableData(dis1, dis2, comp, names) {
+// function to generate table of the query results underneath the venn diagram
+// disclaimer: due to unknown reasons the html index wouldn't update the function name 
+
+async function GenTable(dis1, dis2, comp, names) {
 
     //output arrays for Venn diagram
     var AB = new Array(), A = new Array(), B = new Array(); //array for storing and counting items retreived by queries.js 
