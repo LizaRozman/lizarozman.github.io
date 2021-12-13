@@ -1,13 +1,10 @@
 // function to generate table of the query results underneath the venn diagram
-// disclaimer: due to unknown reasons the html index wouldn't update the function name 
+// disclaimer: due to unknown reasons the html index wouldn't update the function name, so the function does not work at the moment
 
 async function GenTable(dis1, dis2, comp, names) {
 
     //output arrays for Venn diagram
     var AB = new Array(), A = new Array(), B = new Array(); //array for storing and counting items retreived by queries.js 
-    var contDiagA = "", contDiagB = "", contDiagAB = ""; //strings used as output for the items retreived by queries.js
-
-
 
     // calls retrieve function from query.js file based on user inputs. Specific query called is based on comparison condition,
     //results1 and reuslts2 will hold data for dis1 and dis2 respectively
@@ -30,8 +27,6 @@ async function GenTable(dis1, dis2, comp, names) {
     } else { alert('selected condition cannot be found') }
 
 
-
-
     // loops through data in both reults1 and results2 and checks if item are identical, if true adds to AB array
     for (let i in results1) { for (let j in results2) { if (results1[i] == results2[j]) { AB.push(results2[j]); } } }
 
@@ -51,7 +46,7 @@ async function GenTable(dis1, dis2, comp, names) {
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
 
-    // creates array of entry arrays and determines longest one
+    // creates array of entry arrays and determines longest one for outer for loop
     var allData = [A, AB, B], longestArray;
     if(A_size>B_size && A_size>AB_size){
         longestArray = A_size;
@@ -89,16 +84,14 @@ async function GenTable(dis1, dis2, comp, names) {
     tbl.appendChild(tblhead);
     console.log("head");
 
-    // creating all cells
+    // creating all cells along with necessary elements
     for (var j = 0; j<longestArray; j++) {
         // creates a table row
         var row = document.createElement("tr");
     
         for (var i = 0; i < 2; i++) {
-        // Create a <td> element and a text node, make the text
-        // node the contents of the <td>, and put the <td> at
-        // the end of the table row
         var cell = document.createElement("td");
+        //checks if array has entry at index j, otherwise puts blank
         if(j in allData[i]){
             var cellText = document.createTextNode(allData[i][j]);
         }
@@ -116,8 +109,7 @@ async function GenTable(dis1, dis2, comp, names) {
     
     // put the <tbody> in the <table>
     tbl.appendChild(tblBody);
-    // appends <table> into <body>
+    // appends <table> into <div id="table">
     body.appendChild(tbl);
     
-    document.body.appendChild(body);
 }
