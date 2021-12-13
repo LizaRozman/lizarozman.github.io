@@ -77,7 +77,6 @@ async function GenTable(dis1, dis2, comp, names) {
         rowhd.appendChild(hd3);
         tblhead.appendChild(rowhd);
         tbl.appendChild(tblhead);
-        console.log("head");
 
         // creating all cells along with necessary elements
         for (var j = 0; j<longestArray; j++) {
@@ -100,7 +99,6 @@ async function GenTable(dis1, dis2, comp, names) {
 
             // add the row to the end of the table body
             tblBody.appendChild(row);
-            console.log("body");
         }
     }
     
