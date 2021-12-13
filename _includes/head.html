@@ -89,11 +89,11 @@
   {%- capture img -%}
     {%- if page.share-img -%}
       {{ page.share-img }}
-    {%- elsif page.cover-img -%}
+    {%- elsif page2.cover-img -%}
       {%- if page.cover-img.first -%}
         {{ page.cover-img[0].first.first }}
       {%- else -%}
-        {{ page.cover-img }}
+        {{ page2.cover-img }}
       {%- endif -%}
     {%- elsif page.thumbnail-img -%}
       {{ page.thumbnail-img }}
