@@ -83,16 +83,16 @@ async function GenTable(dis1, dis2, comp, names) {
             var row = document.createElement("tr");
 
             for (var i = 0; i < 2; i++) {
-            var cell = document.createElement("td");
-            //checks if array has entry at index j, otherwise puts blank
-            if(j in allData[i]){
-                var cellText = document.createTextNode(allData[i][j]);
-            }
-            else{
-                var cellText = document.createTextNode(" ");
-            }
-            cell.appendChild(cellText);
-            row.appendChild(cell);
+                var cell = document.createElement("td");
+                //checks if array has entry at index j, otherwise puts blank
+                if(j in allData[i]){
+                    var cellText = document.createTextNode(allData[i][j]);
+                }
+                else{
+                    var cellText = document.createTextNode(" ");
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
             }
 
             // add the row to the end of the table body
@@ -126,16 +126,16 @@ async function GenTable(dis1, dis2, comp, names) {
             var row = document.createElement("tr");
 
             for (var i = 0; i < 3; i++) {
-            var cell = document.createElement("td");
-            //checks if array has entry at index j, otherwise puts blank
-            if(j in allData[i]){
-                var cellText = document.createTextNode(allData[i][j]);
-            }
-            else{
-                var cellText = document.createTextNode(" ");
-            }
-            cell.appendChild(cellText);
-            row.appendChild(cell);
+                var cell = document.createElement("td");
+                //checks if array has entry at index j, otherwise puts blank
+                if(j in allData[i]){
+                    var cellText = document.createTextNode(allData[i][j]);
+                }
+                else{
+                    var cellText = document.createTextNode(" ");
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
             }
 
             // add the row to the end of the table body
