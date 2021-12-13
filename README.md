@@ -32,6 +32,6 @@ Because this template was forked from another user, there are a couple files whi
  8. assets --> img: contains all of the images used for the website
  9. posts --> 2021-11-19-brain-anatomy.html: contains the code for the blog post about brain anatomy and function
 
-## Other commeents.
+## Other comments.
 We would like to point out that there was no data on brain structures in Wikidata database, therefore the output for a combination of diseases with Mental Depression will only give the output of the other one. We area lso aware that two of the output treatments for Mental Depression are "Jeff Bezos" and "Pee Pee Island" because they are also in Wikidata database.
 
