@@ -65,6 +65,7 @@ async function GenTable(dis1, dis2, comp, names) {
     var hd1 = document.createElement("th");
     var hd2 = document.createElement("th");
     var hd3 = document.createElement("th");
+    var rowhd = document.createElement("tr");
     var hd1text = document.createTextNode(compName + " associated with " + dis1name);
     var hd2text = document.createTextNode("Overlap in " + compName + " between " + dis1name + " and " + dis2name);
     var hd3text = document.createTextNode(compName + " associated with " + dis2name);
