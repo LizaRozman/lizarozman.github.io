@@ -36,26 +36,20 @@ async function GenTable(dis1, dis2, comp, names) {
     // loops through results 2. If element is not already in AB or B, assigns item to B 
     for (var j in results2) { if (!(AB.includes(results2[j])) && !(B.includes(results2[j]))) { B.push(results2[j]); } }
 
-    // computes relative size of the diagram parts (A, B, AB). 
-    var AB_total = A.length + B.length + AB.length;
-    var A_size = parseInt(A.length / AB_total * 100);
-    var B_size = parseInt(B.length / AB_total * 100);
-    var AB_size = parseInt(AB.length / AB_total * 100);
-
     //get disease names from 'names' map    
     let dis1name = names.get(dis1);
     let dis2name = names.get(dis2);
 
     // creates array of entry arrays and determines longest one for outer for loop
     var allData = [A, AB, B], longestArray;
-    if(A_size>B_size && A_size>AB_size){
-        longestArray = A_size;
+    if(A.length>B.length && A.length>AB.length){
+        longestArray = A.length;
     }
-    else if(B_size>A_size && B_size>AB_size){
-        longestArray = B_size;
+    else if(B.length>A.length && B.length>AB.length){
+        longestArray = B.length;
     }
     else{
-        longestArray = AB_size;
+        longestArray = AB.length;
     }
     console.log(allData);
     console.log(longestArray);
