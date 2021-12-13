@@ -17,7 +17,8 @@ To aid such research initiatives, we have created a website that eplores and vis
  1. Scroll down on this page to see 3 drop-down menus and a 'Searrch' button.
  2. Select the two different(!) mental disorders that you want to compare via the first two drop-down menus.
  3. Then, select which characteristic of the diseases you want to compare via the third drop-down menu.   
- 4. Finaly, click 'Search' to see a Venn-diagram showing the characteristics of interest for both dsiorders, as well as the overlap between them (if there is any).
+ 4. Click 'Search' to see a Venn-diagram showing the characteristics of interest for both dsiorders, as well as the overlap between them (if there is any).
+ 5. Hover over the diagram to see which circle belongs to which disorder. Clicking a circle or the intersection will show you the items (as text) belonging to the respective field.
 
 ## Our files.
 Because this template was forked from another user, there are a couple files which are not our own that we are keeping in the repository as they encode for the layout of the template. The following files are the main ones that we either wrote or adapted for our website:
