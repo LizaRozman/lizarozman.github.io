@@ -9,19 +9,19 @@ async function GenTable(dis1, dis2, comp, names) {
     // calls retrieve function from query.js file based on user inputs. Specific query called is based on comparison condition,
     //results1 and reuslts2 will hold data for dis1 and dis2 respectively
     if (comp == "treat") {
-        compName = "treatments";
+        compName = "Treatments";
         var results1 = await TreatQuery(dis1);
         var results2 = await TreatQuery(dis2);
     } else if (comp == "symp") {
-        compName = "symptoms";
+        compName = "Symptoms";
         var results1 = await SymptQuery(dis1);
         var results2 = await SymptQuery(dis2);
     } else if (comp == "gene") {
-        compName = "genes";
+        compName = "Genes";
         var results1 = await GeneQuery(dis1);
         var results2 = await GeneQuery(dis2);
     } else if (comp == "struct") {
-        compName = "brain structures";
+        compName = "Brain structures";
         var results1 = await StructQuery(dis1);
         var results2 = await StructQuery(dis2);
     } else { alert('selected condition cannot be found') }
