@@ -84,7 +84,7 @@ async function GenTable(dis1, dis2, comp, names) {
         // creates a table row
         var row = document.createElement("tr");
     
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 3; i++) {
         var cell = document.createElement("td");
         //checks if array has entry at index j, otherwise puts blank
         if(j in allData[i]){
