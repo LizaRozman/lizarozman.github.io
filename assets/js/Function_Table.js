@@ -52,23 +52,23 @@ async function GenTable(dis1, dis2, comp, names) {
         longestArray = AB.length;
     }    
     
-    var case;
+    var caseData;
     //checks if theres overlap or not, then constructs array with all relevant data to loop through
     if(AB.length==0){
         allData = [A, B];
-        case = "noAB";
+        caseData = "noAB";
     }
     else if(A.length==0){
         allData = [AB, B];
-        case = "noA";
+        caseData = "noA";
     }
     else if(B.length==0){
         allData = [A, AB];
-        case = "noB";
+        caseData = "noB";
     }
     else{
         allData = [A, AB, B];
-        case = "all";
+        caseData = "all";
     }
         
     // get the reference for the body
@@ -81,7 +81,7 @@ async function GenTable(dis1, dis2, comp, names) {
     
     // sets table headings depending on overlap case
     
-    switch(case){
+    switch(caseData){
         case "noA":{
             var hd2 = document.createElement("th");
             var hd3 = document.createElement("th");
@@ -165,11 +165,10 @@ async function GenTable(dis1, dis2, comp, names) {
             tblBody.appendChild(row);
             console.log("body");
         }
-    }
+
     
     // put the <tbody> in the <table>
     tbl.appendChild(tblBody);
     // appends <table> into <div id="table">
-    body.appendChild(tbl);
-    
+    body.appendChild(tbl);   
 }
