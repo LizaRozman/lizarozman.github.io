@@ -50,91 +50,112 @@ async function GenTable(dis1, dis2, comp, names) {
     }
     else{
         longestArray = AB.length;
+    }    
+    
+    var case;
+    //checks if theres overlap or not, then constructs array with all relevant data to loop through
+    if(AB.length==0){
+        allData = [A, B];
+        case = "noAB";
     }
-    console.log(allData);
-    console.log(longestArray);
+    else if(A.length==0){
+        allData = [AB, B];
+        case = "noA";
+    }
+    else if(B.length==0){
+        allData = [A, AB];
+        case = "noB";
+    }
+    else{
+        allData = [A, AB, B];
+        case = "all";
+    }
+        
     // get the reference for the body
     var body = document.getElementById("table");
-    
+   
     // creates a <table> element, <thead> element and <tbody> element
     var tbl = document.createElement("table");
     var tblhead = document.createElement("thead");
     var tblBody = document.createElement("tbody");
     
+    // sets table headings depending on overlap case
     
-    //checks if theres overlap or not, then constructs array with all relevant data to loop through
-    if(AB.length==0){
-        var allData = [A, B];
-        // sets table headings
-        var hd1 = document.createElement("th");
-        var hd3 = document.createElement("th");
-        var rowhd = document.createElement("tr");
-        var hd1text = document.createTextNode(compName + " associated with " + dis1name);
-        var hd3text = document.createTextNode(compName + " associated with " + dis2name);
-        hd1.appendChild(hd1text);
-        hd3.appendChild(hd3text);
-        rowhd.appendChild(hd1);
-        rowhd.appendChild(hd3);
-        tblhead.appendChild(rowhd);
-        tbl.appendChild(tblhead);
-
-        // creating all cells along with necessary elements
-        for (var j = 0; j<longestArray; j++) {
-            // creates a table row
-            var row = document.createElement("tr");
-
-            for (var i = 0; i < 2; i++) {
-                var cell = document.createElement("td");
-                console.log("row" + j);
-                //checks if array has entry at index j, otherwise puts blank
-                if(j in allData[i]){
-                    var cellText = document.createTextNode(allData[i][j]);
-                }
-                else{
-                    var cellText = document.createTextNode(" ");
-                }
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            }
-
-            // add the row to the end of the table body
-            tblBody.appendChild(row);
+    switch(case){
+        case "noA":{
+            var hd2 = document.createElement("th");
+            var hd3 = document.createElement("th");
+            var rowhd = document.createElement("tr");
+            var hd2text = document.createTextNode("Overlap in " + compName + " between " + dis1name + " and " + dis2name);
+            var hd3text = document.createTextNode(compName + " associated with " + dis2name);
+            hd2.appendChild(hd2text);
+            hd3.appendChild(hd3text);
+            rowhd.appendChild(hd2);
+            rowhd.appendChild(hd3);
+            tblhead.appendChild(rowhd);
+            tbl.appendChild(tblhead);
+            break;
+        } 
+        case "noB":{
+            var hd1 = document.createElement("th");
+            var hd2 = document.createElement("th");
+            var rowhd = document.createElement("tr");
+            var hd1text = document.createTextNode(compName + " associated with " + dis1name);
+            var hd2text = document.createTextNode("Overlap in " + compName + " between " + dis1name + " and " + dis2name);
+            hd1.appendChild(hd1text);
+            hd2.appendChild(hd2text);
+            rowhd.appendChild(hd1);
+            rowhd.appendChild(hd2);
+            tblhead.appendChild(rowhd);
+            tbl.appendChild(tblhead);
+            break;
+        }
+        case "noAB":{
+            var hd1 = document.createElement("th");
+            var hd3 = document.createElement("th");
+            var rowhd = document.createElement("tr");
+            var hd1text = document.createTextNode(compName + " associated with " + dis1name);
+            var hd3text = document.createTextNode(compName + " associated with " + dis2name);
+            hd1.appendChild(hd1text);
+            hd3.appendChild(hd3text);
+            rowhd.appendChild(hd1);
+            rowhd.appendChild(hd3);
+            tblhead.appendChild(rowhd);
+            tbl.appendChild(tblhead);
+            break;
+        }
+        case "all":{
+            var hd1 = document.createElement("th");
+            var hd2 = document.createElement("th");
+            var hd3 = document.createElement("th");
+            var rowhd = document.createElement("tr");
+            var hd1text = document.createTextNode(compName + " associated with " + dis1name);
+            var hd2text = document.createTextNode("Overlap in " + compName + " between " + dis1name + " and " + dis2name);
+            var hd3text = document.createTextNode(compName + " associated with " + dis2name);
+            hd1.appendChild(hd1text);
+            hd2.appendChild(hd2text);
+            hd3.appendChild(hd3text);
+            rowhd.appendChild(hd1);
+            rowhd.appendChild(hd2);
+            rowhd.appendChild(hd3);
+            tblhead.appendChild(rowhd);
+            tbl.appendChild(tblhead);
+            break;
         }
     }
-    
-    else{
-        // sets table headings
-        var hd1 = document.createElement("th");
-        var hd2 = document.createElement("th");
-        var hd3 = document.createElement("th");
-        var rowhd = document.createElement("tr");
-        var hd1text = document.createTextNode(compName + " associated with " + dis1name);
-        var hd2text = document.createTextNode("Overlap in " + compName + " between " + dis1name + " and " + dis2name);
-        var hd3text = document.createTextNode(compName + " associated with " + dis2name);
-        hd1.appendChild(hd1text);
-        hd2.appendChild(hd2text);
-        hd3.appendChild(hd3text);
-        rowhd.appendChild(hd1);
-        rowhd.appendChild(hd2);
-        rowhd.appendChild(hd3);
-        tblhead.appendChild(rowhd);
-        tbl.appendChild(tblhead);
-        console.log("head");
-
-        // creating all cells along with necessary elements
+    //loops through data and constructs the cells and rows to form the table
         for (var j = 0; j<longestArray; j++) {
             // creates a table row
             var row = document.createElement("tr");
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < allData.length; i++) {
                 var cell = document.createElement("td");
-                console.log("row" + j);
                 //checks if array has entry at index j, otherwise puts blank
-                if(j in allData[i]){
-                    var cellText = document.createTextNode(allData[i][j]);
+                if(allData[i][j]==undefined){
+                    var cellText = document.createTextNode(" ");
                 }
                 else{
-                    var cellText = document.createTextNode(" ");
+                    var cellText = document.createTextNode(allData[i][j]);
                 }
                 cell.appendChild(cellText);
                 row.appendChild(cell);
