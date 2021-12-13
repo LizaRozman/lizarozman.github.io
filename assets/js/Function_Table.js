@@ -128,6 +128,7 @@ async function GenTable(dis1, dis2, comp, names) {
 
             for (var i = 0; i < 3; i++) {
                 var cell = document.createElement("td");
+                console.log("row" + j);
                 //checks if array has entry at index j, otherwise puts blank
                 if(j in allData[i]){
                     var cellText = document.createTextNode(allData[i][j]);
