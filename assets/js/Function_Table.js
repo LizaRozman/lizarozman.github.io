@@ -144,27 +144,27 @@ async function GenTable(dis1, dis2, comp, names) {
         }
     }
     //loops through data and constructs the cells and rows to form the table
-        for (var j = 0; j<longestArray; j++) {
-            // creates a table row
-            var row = document.createElement("tr");
+    for (var j = 0; j<longestArray; j++) {
+        // creates a table row
+        var row = document.createElement("tr");
 
-            for (var i = 0; i < allData.length; i++) {
-                var cell = document.createElement("td");
-                //checks if array has entry at index j, otherwise puts blank
-                if(allData[i][j]==undefined){
-                    var cellText = document.createTextNode(" ");
-                }
-                else{
-                    var cellText = document.createTextNode(allData[i][j]);
-                }
-                cell.appendChild(cellText);
-                row.appendChild(cell);
+        for (var i = 0; i < allData.length; i++) {
+            var cell = document.createElement("td");
+            //checks if array has entry at index j, otherwise puts blank
+            if(allData[i][j]==undefined){
+                var cellText = document.createTextNode(" ");
             }
-
-            // add the row to the end of the table body
-            tblBody.appendChild(row);
-            console.log("body");
+            else{
+                var cellText = document.createTextNode(allData[i][j]);
+            }
+            cell.appendChild(cellText);
+            row.appendChild(cell);
         }
+
+        // add the row to the end of the table body
+        tblBody.appendChild(row);
+        console.log("body");
+    }
 
     
     // put the <tbody> in the <table>
