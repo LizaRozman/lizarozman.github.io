@@ -56,11 +56,13 @@ async function GenTable(dis1, dis2, comp, names) {
     // get the reference for the body
     var body = document.getElementById("table");
     
-    // creates a <table> element and a <tbody> element
+    // creates a <table> element, <thead> element and <tbody> element
     var tbl = document.createElement("table");
     var tblhead = document.createElement("thead");
     var tblBody = document.createElement("tbody");
     
+    
+    //checks if theres overlap or not, then constructs array with all relevant data to loop through
     if(AB.length==0){
         var allData = [A, B];
         // sets table headings
